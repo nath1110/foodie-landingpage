@@ -2,6 +2,7 @@
   <div class="home">
     <AppNavbar/>
     <SectionAbout/>
+    <SectionRestaurants/>
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 // @ is an alias to /src
 import AppNavbar from '@/components/AppNavbar.vue'
 import SectionAbout from '@/components/SectionAbout.vue'
+import SectionRestaurants from '@/components/SectionRestaurants.vue'
 export default {
   name: 'Home',
   components: {
     AppNavbar,
-    SectionAbout
+    SectionAbout,
+    SectionRestaurants
   }
 }
 </script>
