@@ -4,6 +4,8 @@
     <SectionAbout/>
     <SectionRestaurants/>
     <SectionContact/>
+    <AppFooter/>
+    
   </div>
 </template>
 
@@ -13,13 +15,15 @@ import AppNavbar from '@/components/AppNavbar.vue'
 import SectionAbout from '@/components/SectionAbout.vue'
 import SectionRestaurants from '@/components/SectionRestaurants.vue'
 import SectionContact from '@/components/SectionContact.vue'
+import AppFooter from '@/components/AppFooter.vue'
 export default {
   name: 'Home',
   components: {
     AppNavbar,
     SectionAbout,
     SectionRestaurants,
-    SectionContact
+    SectionContact,
+    AppFooter
   }
 }
 </script>
