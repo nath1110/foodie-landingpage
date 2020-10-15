@@ -3,6 +3,7 @@
     <AppNavbar/>
     <SectionAbout/>
     <SectionRestaurants/>
+    <SectionContact/>
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import AppNavbar from '@/components/AppNavbar.vue'
 import SectionAbout from '@/components/SectionAbout.vue'
 import SectionRestaurants from '@/components/SectionRestaurants.vue'
+import SectionContact from '@/components/SectionContact.vue'
 export default {
   name: 'Home',
   components: {
     AppNavbar,
     SectionAbout,
-    SectionRestaurants
+    SectionRestaurants,
+    SectionContact
   }
 }
 </script>
