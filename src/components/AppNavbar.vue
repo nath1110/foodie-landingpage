@@ -1,165 +1,131 @@
 <template>
-  <nav id="header" class="fixed top-0 z-30 w-full text-white">
-    <div class="relative overflow-hidden bg-white">
-      <div class="max-w-screen-xl mx-auto">
-        <div
-          class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
-        >
-          <svg
-            class="absolute inset-y-0 right-0 hidden w-48 h-full text-white transform translate-x-1/2 lg:block"
-            fill="currentColor"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
+    <nav id="header" class="fixed top-0 z-30 w-full text-white">
+      <div
+        class="container flex flex-wrap items-center justify-between w-full py-2 mx-auto mt-0"
+      >
+        <div class="flex items-center pl-4 ml-8 ">
+          <a
+            class="text-2xl font-bold text-black no-underline toggleColour hover:no-underline lg:text-4xl"
+            href="#"
           >
-            <polygon points="50,0 100,0 50,100 0,100" />
-          </svg>
+            Foodies
+          </a>
+        </div>
 
-          <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
-            <nav
-              class="relative flex items-center justify-between sm:h-10 lg:justify-start"
-            >
-              <div
-                class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0"
-              >
-                <div class="flex items-center justify-between w-full md:w-auto">
-                  <a
-                    href="#"
-                    aria-label="Home"
-                    class="text-3xl font-bold text-black"
-                  >
-                    Foodies
-                  </a>
-                  <div class="flex items-center -mr-2 md:hidden">
-                    <button
-                      type="button"
-                      class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
-                      id="main-menu"
-                      aria-label="Main menu"
-                      aria-haspopup="true"
-                    >
-                      <svg
-                        class="w-6 h-6"
-                        stroke="currentColor"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="hidden md:block md:ml-10 md:pr-4">
-                <a
-                  href="#"
-                  class="font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-900"
-                  >Acerca de</a
-                >
-                <a
-                  href="#"
-                  class="ml-8 font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-900"
-                  >Restaurantes</a
-                >
-                <a
-                  href="#"
-                  class="ml-8 font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-900"
-                  >Menú</a
-                >
-                <a
-                  href="#"
-                  class="ml-8 font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-900"
-                  >Contáctanos</a
-                >
-              </div>
-            </nav>
-          </div>
-          <div
-            class="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden"
+        <div class="block pr-4 lg:hidden">
+          <button
+            id="nav-toggle"
+            class="flex items-center p-1 text-orange-800 hover:text-gray-900"
           >
-            <div class="rounded-lg shadow-md">
-              <div
-                class="overflow-hidden bg-white rounded-lg shadow-xs"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="main-menu"
+            <svg
+              class="w-6 h-6 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:flex lg:items-center lg:w-auto lg:block lg:mt-0 lg:bg-transparent lg:p-0"
+          id="nav-content"
+        >
+          <ul class="items-center flex-1 ml-16 list-reset lg:flex">
+            <li class="mr-3">
+              <a
+                class="inline-block px-4 py-2 text-black no-underline hover:text-gray-800 hover:text-underline"
+                href="#"
+                >Acerca de</a
               >
-                <div class="flex items-center justify-between px-5 pt-4">
-                  <div>
-                    <img
-                      class="w-auto h-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="-mr-2">
-                    <button
-                      type="button"
-                      class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
-                      aria-label="Close menu"
-                    >
-                      <svg
-                        class="w-6 h-6"
-                        stroke="currentColor"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="px-2 pt-2 pb-3">
-                  <a
-                    href="#"
-                    class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                    role="menuitem"
-                    >Acerca de</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-3 py-2 mt-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                    role="menuitem"
-                    >Restaurantes</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-3 py-2 mt-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                    role="menuitem"
-                    >Menú</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-3 py-2 mt-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                    role="menuitem"
-                    >Contáctanos</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+            </li>
+            <li class="mr-3">
+              <a
+                class="inline-block px-4 py-2 text-black no-underline hover:text-gray-800 hover:text-underline"
+                href="#"
+                >Restaurantes</a
+              >
+            </li>
+            <li class="mr-3">
+              <a
+                class="inline-block px-4 py-2 text-black no-underline hover:text-gray-800 hover:text-underline"
+                href="#"
+                >Menú</a
+              >
+            </li>
+            <li class="mr-3">
+              <a
+                class="inline-block px-4 py-2 text-black no-underline hover:text-gray-800 hover:text-underline"
+                href="#"
+                >Contactanos</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </nav>
+      <hr class="py-0 my-0 border-b border-gray-100 opacity-25" />
+    </nav>
 </template>
 
 <script>
 export default {
   name: "AppNavbar",
-  methods: {},
+  methods: {/*
+    var scrollpos = window.scrollY;
+	var header = document.getElementById("header");
+	var navcontent = document.getElementById("nav-content");
+	var navaction = document.getElementById("navAction");
+	var brandname = document.getElementById("brandname");
+	var toToggle = document.querySelectorAll(".toggleColour");
+
+	document.addEventListener('scroll', function() {
+
+	/*Apply classes for slide in bar*/
+	/*scrollpos = window.scrollY;
+
+    if(scrollpos > 10){
+      header.classList.add("bg-white");
+	  navaction.classList.remove("bg-white");
+	  navaction.classList.add("gradient");
+	  navaction.classList.remove("text-gray-800");
+	  navaction.classList.add("text-white");
+	  //Use to switch toggleColour colours
+  	  for (var i = 0; i < toToggle.length; i++) {
+	     toToggle[i].classList.add("text-gray-800");
+		 toToggle[i].classList.remove("text-white");
+	  }
+	  header.classList.add("shadow");
+	  navcontent.classList.remove("bg-gray-100");
+	  navcontent.classList.add("bg-white");
+    }
+    else {
+	  header.classList.remove("bg-white");
+	  navaction.classList.remove("gradient");
+	  navaction.classList.add("bg-white");
+	  navaction.classList.remove("text-white");
+	  navaction.classList.add("text-gray-800");
+	  //Use to switch toggleColour colours
+  	  for (var i = 0; i < toToggle.length; i++) {
+	     toToggle[i].classList.add("text-white");
+		 toToggle[i].classList.remove("text-gray-800");
+	  }
+	  
+	  header.classList.remove("shadow");
+	  navcontent.classList.remove("bg-white");
+	  navcontent.classList.add("bg-gray-100");
+	  
+    }
+
+	});*/
+  },
+  
 };
+
+
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
 </style>
