@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -24,5 +24,24 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+@font-face {
+  font-family: "Druk Text Wide Heavy";
+
+  src: local("Druk Text Wide Heavy"),
+    url(./assets/fonts/DrukText/DrukTextWide-Heavy.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Drunk Text Wide Medium";
+  src: local("Drunk Text Wide Medium"),
+    url(./assets/fonts/DrukText/DrukTextWide-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Syne";
+  src: local("Syne"),
+    url(./assets/fonts/syne-typeface/TTF/Syne-Bold.ttf) format("truetype");
 }
 </style>
