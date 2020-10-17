@@ -12,7 +12,7 @@
           Foodies
         </a>
       </div>
-
+      <!-----------button navbar------------>
       <div class="block pr-4 xl:hidden">
         <button
           id="nav-toggle"
@@ -28,7 +28,7 @@
           </svg>
         </button>
       </div>
-
+      <!------------------ list sections--------->
       <div
         class="flex-grow w-full h-16 text-black bg-white md:hidden xl:flex xl:items-center xl:w-auto xl:mt-0 xl:bg-transparent xl:p-0"
         id="nav-content"
@@ -49,7 +49,7 @@
           </li>
           <li class="mr-3">
             <a class="py-2 text-black no-underline link5" href="#"
-              >Contactanos</a
+              >Contáctanos</a
             >
           </li>
         </ul>
@@ -171,7 +171,12 @@ a:hover {
 .link5 {
   position: relative;
   z-index: 1;
-  padding: 2.5rem 1.9rem 1.9rem;
+  padding: 2.5rem 1rem 1.3rem;
+  font-family: "Syne";
+font-style: normal;
+font-weight: bold;
+font-size: 1rem;
+line-height: 22px;
 }
 
 .link5:after {
