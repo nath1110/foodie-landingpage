@@ -1,33 +1,33 @@
 <template>
   <div class="flex w-full px-12 pb-10 md:px-0">
-      <div class="w-2/5 md:w-1/2">
-        <h1>Estamos para ti</h1>
+      <div class="w-2/5 md:w-1/2 ">
+        <h1 class="text-black prim_title xl:pb-6">Estamos para ti</h1>
         <!------ Tabs------------>
         <div class="flex w-full">
           
             <ul class="flex w-full pt-3 mb-0 list-none">
               <li class="w-1/2 -mb-px text-center last:mr-0">
                 <a
-                  class="block px-5 py-3 text-xs font-bold leading-normal uppercase border border-gray-600 "
+                  class="block px-5 py-3 text-xs font-bold leading-normal border border-gray-600 "
                   @click="toggleTabs(1)"
                   :class="{
                     'text-black bg-white': openTab !== 1,
                     'text-white bg-black': openTab === 1,
                   }"
                 >
-                  <i class="mr-1 text-base fas fa-hamburger"></i> Para llevar
+                  <i class="mr-1 fas fa-hamburger"></i> Para llevar
                 </a>
               </li>
               <li class="w-1/2 -mb-px text-center last:mr-0">
                 <a
-                  class="block py-3 text-xs font-bold leading-normal uppercase border border-gray-600"
+                  class="block py-3 text-xs font-bold leading-normal border border-gray-600"
                   @click="toggleTabs(2)"
                   :class="{
                     'text-black bg-white': openTab !== 2,
                     'text-white bg-black': openTab === 2,
                   }"
                 >
-                  <i class="mr-1 text-base fas fa-truck " src="@/assets/delivery.png"></i> Domicilio
+                  <i class="mr-1 fas fa-truck " src="@/assets/delivery.png"></i> Domicilio
                 </a>
               </li>
             </ul>
@@ -65,22 +65,20 @@
           
         </div>
         <!----------------end Search---------->
+
+        <!--------start card info restaurant------------->
         <div
           class="flex flex-col w-4/5 min-w-0 mx-auto mt-3 bg-white border rounded-md mbreak-words"
           v-for="branch in locations" :key="branch"
         >
-          <div class="flex-auto px-4 py-5 ">
-            <div class="tab-content ">
-              <div
-              >
+          <div class="flex-auto px-4 py-5 text-xl text-left text-black tab-content">
+              
                 <p id="nameRest" class=""> {{branch.name}}
                 </p>
-                <p id="schedule" class="">  {{branch.closing_time}}
+                <p id="schedule" class= "pt-2 ">Abierto de {{changeHour(branch.opening_time)}} - {{changeHour(branch.closing_time)}}
                 </p>
-                <p id="direccion" class="">{{branch.address}} 
+                <p id="address" class="">{{branch.address}} 
                 </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -133,7 +131,7 @@ export default {
     place: "elaniin",
     active: true,
     longitude: "",
-    locations:[],
+    locations:[]
   }),
   watch: {
     place: function () {
@@ -158,6 +156,23 @@ export default {
       var result = await GET_LOCATIONS(type);
       this.locations=result.data.data;      
     }, 
+
+    toggleTabs(tabNumber) {
+      this.openTab = tabNumber;
+      if(this.openTab==1){
+        this.showLocations("takeaway")
+      }else{
+        this.showLocations("delivery")
+      }
+      
+    },
+
+    changeHour(hour){
+      var aux= hour.split(":");
+
+      return aux[0]<12 ? aux[0]+":"+aux[1]+" a.m." : aux[0] +":"+aux[1]+" p.m."
+      
+    },
     
     lookupCoordinates: _.debounce(function () {
       var app = this;
@@ -177,16 +192,6 @@ export default {
           app.latitude = "Invalid place";
         });
     }, 600),
-    
-    toggleTabs(tabNumber) {
-      this.openTab = tabNumber;
-      if(this.openTab==1){
-        this.showLocations("takeaway")
-      }else{
-        this.showLocations("delivery")
-      }
-      
-    },
 
   },
 };
@@ -205,5 +210,34 @@ export default {
   background: none !important;
   height: 100%;
   width: 100%;
+}
+
+a{
+  font-family: "Syne";
+font-style: normal;
+font-weight: bold;
+font-size: 1.5rem;
+line-height: 30px;
+}
+.prim_title{
+  font-family: "Drunk Text Wide Medium";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 40px;
+}
+
+#nameRest{
+  font-family: "Syne";
+font-style: normal;
+font-weight: bold;
+line-height: 24px;
+}
+
+#schedule, #address{
+font-style: normal;
+font-weight: normal;
+font-size: 1rem;
+line-height: 22px;
 }
 </style>
