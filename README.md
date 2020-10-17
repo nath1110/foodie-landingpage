@@ -1,5 +1,9 @@
 # foodie-landingpage
 
+## Clone project
+```
+git clone 'https://github.com/nath1110/foodie-landingpage.git'
+```
 ## Project setup
 ```
 npm install
