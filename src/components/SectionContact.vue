@@ -1,6 +1,7 @@
 <template>
   <div class="">
-    <section class="px-4 py-12">
+    <section class="px-4 py-12 xl:mb-10">
+      <!----------------------- figure left------------->
       <div class="absolute left-0 justify-start">
         <svg
           width="187"
@@ -17,8 +18,8 @@
           />
         </svg>
       </div>
-
-      <div class="absolute right-0 justify-end">
+      <!--------------------------Figure right-------------------->
+      <div class="absolute right-0 justify-end xl:mt-32">
         <svg
           width="214"
           height="547"
@@ -34,95 +35,20 @@
           />
         </svg>
       </div>
+      <!---------------------- image ketchup---------------------->
       <div class="absolute right-0">
         <img src="@/assets/images/testimonials_bg_ketchup.png" />
       </div>
-      <!--Start testimonials-->
 
-      <div class="mx-auto slider">
-        <input
-          type="radio"
-          name="slider"
-          title="slide1"
-          checked="checked"
-          class="slider__nav"
-        />
-        <input type="radio" name="slider" title="slide2" class="slider__nav" />
-        <input type="radio" name="slider" title="slide3" class="slider__nav" />
-        <input type="radio" name="slider" title="slide4" class="slider__nav" />
-        <div class="h-full slider__inner">
-          <div class="slider__contents">
-            <i class="slider__image fa fa-codepen"></i>
-            <h2 class="slider__caption">codepen</h2>
-            <p class="slider__txt">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-              cupiditate omnis possimus illo quos, corporis minima!
-            </p>
-          </div>
-          <div class="slider__contents">
-            <i class="slider__image fa fa-newspaper-o"></i>
-            <h2 class="slider__caption">newspaper-o</h2>
-            <p class="slider__txt">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-              cupiditate omnis possimus illo quos, corporis minima!
-            </p>
-          </div>
-          <div class="slider__contents">
-            <i class="slider__image fa fa-television"></i>
-            <h2 class="slider__caption">television</h2>
-            <p class="slider__txt">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-              cupiditate omnis possimus illo quos, corporis minima!
-            </p>
-          </div>
-          <div class="slider__contents">
-            <i class="slider__image fa fa-diamond"></i>
-            <h2 class="slider__caption">diamond</h2>
-            <p class="slider__txt">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-              cupiditate omnis possimus illo quos, corporis minima!
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <!--------------------------Start testimonials--------------------->
       <div
-        class="container flex flex-col mx-auto my-10 overflow-hidden shadow-sm md:my-24 md:flex-row"
+        class="container flex flex-col mx-auto my-10 overflow-hidden shadow-sm xl:pt-20 md:my-24 md:flex-row"
         x-data="{ testimonialActive: 2 }"
         x-cloak
       >
-        <div
-          class="relative flex flex-col justify-center w-full py-2 bg-indigo-700 md:py-24 md:w-1/2 item-center"
-        >
-          <div
-            class="absolute top-0 left-0 z-10 w-16 h-16 grid-indigo md:w-40 md:h-40 md:ml-20 md:mt-24"
-          ></div>
-
-          <div
-            class="relative z-20 px-6 py-2 mb-0 text-2xl font-semibold leading-tight tracking-tight text-indigo-100 md:text-5xl md:py-6 md:px-1 md:w-64 md:mx-auto"
-          >
-            <span class="md:block">What Our</span>
-            <span class="md-block">Customers</span>
-            <span class="block">Are Saying!</span>
-          </div>
-
-          <div class="absolute bottom-0 right-0 hidden mb-4 mr-4 md:block">
-            <button
-              class="w-12 h-10 font-bold text-gray-500 bg-gray-100 border-r rounded-l-full focus:outline-none hover:text-indigo-500"
-              x-on:click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1"
-            >
-              &#8592;
-            </button>
-            <button
-              class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-r-full focus:outline-none hover:text-indigo-500"
-              x-on:click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
-            >
-              &#8594;
-            </button>
-          </div>
-        </div>
-        <div class="bg-gray-100 md:w-1/2">
+        <div class="mx-auto md:w-1/2">
           <div class="relative flex flex-col h-full">
+            
             <div class="absolute top-0 left-0 mt-3 ml-4 md:mt-5 md:ml-12">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,184 +63,139 @@
             <div class="relative z-10 h-full">
               <div x-show.immediate="testimonialActive === 1">
                 <p
-                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  class="px-6 py-6 text-xl text-black testi_text md:px-16 md:py-10 md:text-2xl"
                   x-show.transition="testimonialActive == 1"
-                >
-                  Leverage agile frameworks to provide a robust synopsis for
-                  high level overviews. Iterative approaches to corporate
-                  strategy foster collaborative thinking to further the overall
-                  value proposition. Organically grow the holistic world view of
-                  disruptive innovation via workplace diversity and empowerment.
+                >El mejor lugar para degustar en familia y amigos!
                 </p>
               </div>
 
               <div x-show.immediate="testimonialActive === 2">
                 <p
-                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  class="px-6 py-6 text-xl text-black testi_text md:px-16 md:py-10 md:text-2xl"
                   x-show.transition="testimonialActive == 2"
                 >
-                  Bring to the table win-win survival strategies to ensure
-                  proactive domination. At the end of the day, going forward, a
-                  new normal that has evolved from generation X is on the runway
-                  heading towards a streamlined cloud solution. User generated
-                  content in real-time will have multiple touchpoints for
-                  offshoring.
+                  Toman todas las medidas de seguridad con los clientes
                 </p>
               </div>
 
               <div x-show.immediate="testimonialActive === 3">
                 <p
-                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  class="px-6 py-6 text-xl text-black testi_text md:px-16 md:py-10 md:text-2xl"
                   x-show.transition="testimonialActive == 3"
                 >
-                  Capitalize on low hanging fruit to identify a ballpark value
-                  added activity to beta test. Override the digital divide with
-                  additional clickthroughs from DevOps. Nanotechnology immersion
-                  along the information highway will close the loop on focusing
-                  solely on the bottom line.
+                  Tienen muy buen servicio y son muy amables. Es perfecto!
                 </p>
               </div>
             </div>
 
-            <div class="flex items-center justify-center my-4">
-              <button
-                @click.prevent="testimonialActive = 1"
-                class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:shadow-outline"
-                :class="{
-                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
-                    testimonialActive != 1,
-                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
-                    testimonialActive == 1,
-                }"
-              >
-                JD
-              </button>
-              <button
-                @click.prevent="testimonialActive = 2"
-                class="inline-block w-16 h-16 mx-2 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline"
-                :class="{
-                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
-                    testimonialActive != 2,
-                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
-                    testimonialActive == 2,
-                }"
-              >
-                WD
-              </button>
-              <button
-                @click.prevent="testimonialActive = 3"
-                class="inline-block w-12 h-12 mx-2 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline"
-                :class="{
-                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
-                    testimonialActive != 3,
-                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
-                    testimonialActive == 3,
-                }"
-              >
-                JW
-              </button>
-            </div>
-            <div class="flex justify-center px-6 pt-2 pb-6 md:py-6">
+            <div class="flex justify-center px-6 pb-6 md:py-6">
               <div class="text-center" x-show="testimonialActive == 1">
                 <h2
-                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                  class="text-sm leading-tight text-gray-700 testi_Desc md:text-base"
                 >
-                  John Doe
+                  Es el mejor lugar al que he venido con mi familia,
+                  la comida es rica, sirven rápido y te atienden de la mejor manera.
                 </h2>
-                <small class="text-xs text-gray-500 truncate md:text-sm"
-                  >CEO, ABC Inc.</small
-                >
               </div>
 
               <div class="text-center" x-show="testimonialActive == 2">
                 <h2
-                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                  class="text-sm leading-tight text-gray-700 testi_Desc md:text-base"
                 >
-                  Winter Doe
+                  Siempre mantienen limpias las mesas y sillas, y manejan con
+                  preacución los desechos para que ellos no corran riesgo de contagio.
                 </h2>
-                <small class="text-xs text-gray-500 truncate md:text-sm"
-                  >CTO, XYZ Corp.</small
-                >
               </div>
 
               <div class="text-center" x-show="testimonialActive == 3">
                 <h2
-                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                  class="text-sm leading-tight text-gray-700 testi_Desc md:text-base"
                 >
-                  John Wick
+                  Me atendieron rápido y eran muy atentos de las necesidades de los clientes.
+                  Tambien me gusta que dan dulces al momento de realizar el pago. 
                 </h2>
-                <small class="text-xs text-gray-500 truncate md:text-sm"
-                  >Product Manager, Fake Corp.</small
-                >
               </div>
             </div>
+            <div class="bottom-0 right-0 hidden mb-4 mr-4 md:block">
+            <button
+              class="w-16 h-12 font-bold text-black focus:outline-none hover:text-indigo-500"
+              @click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1"
+            >
+              &#8592;
+            </button>
+            <span>{{testimonialActive}} / 3</span>
+            <button
+              class="w-16 h-12 font-bold text-black focus:outline-none hover:text-indigo-500"
+              @click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
+            >
+              &#8594;
+            </button>
+          </div>
           </div>
         </div>
       </div>
-      <!--------------------------------->
+      
     </section>
-    <!--Section contact us-->
-    <section class="px-4 py-32 bg-black">
-      <h2 class="mb-8 text-3xl text-center text-white font-heading">
+    <!--------------end testimonials------------------->
+
+    <!---------------------Section contact us------------------------------->
+    <section class="px-4 bg-black xl:pt-32 xl:pb-24">
+
+      <h2 class="mb-8 text-4xl text-center text-white font-heading title_comment">
         Cuentanos tu experiencia
       </h2>
-      <p class="text-center text-white">Don't miss out on our great offers & Recieve deals from all our top restaurants via e-mail.
-      <div class="w-full max-w-2xl mx-auto mb-8">
+      <p class="w-6/12 mx-auto text-xl text-center text-white ">
+        Don't miss out on our great offers & Recieve deals from all our top
+        restaurants via e-mail.
+      </p>
+
+      <div class="w-full max-w-3xl py-12 mx-auto">
         <form>
           <div class="flex flex-wrap -mx-8">
             <div class="w-full px-8 pt-2 mb-4 md:w-1/2 md:mb-0">
               <div class="relative w-full appearance-none label-floating">
+                <!------first input "name"------------->
+                <p class="text-left text-white ">Nombre y Apellido</p>
                 <input
-                  class="block w-full px-4 py-2 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  class="w-full px-4 py-8 mb-3 leading-relaxed tracking-wide text-white bg-black border border-gray-200 rounded appearance-none focus:outline-none focus:bg-black focus:border-yellow-400"
                   id="name"
                   v-model="name"
                   type="text"
                   placeholder="Tu nombre"
                   required
                 />
-                <label
-                  for="name"
-                  class="absolute top-0 left-0 block px-4 py-2 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
-                >
-                  Nombre y Apellido
-                </label>
               </div>
               <div class="w-full appearance-none label-floating">
+                <!------second input "email"------------->
+                <p class="text-left text-white ">Correo</p>
                 <input
-                  class="block w-full px-4 py-2 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  class="block w-full px-4 py-8 mb-3 leading-relaxed tracking-wide text-white bg-black border border-gray-200 rounded appearance-none focus:outline-none focus:bg-black focus:border-yellow-400"
                   id="email"
                   type="text"
                   v-model="email"
                   placeholder="Tu correo"
                   required
                 />
-                <label
-                  for="email"
-                  class="absolute top-0 left-0 block py-2 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
-                >
-                  Correo
-                </label>
               </div>
             </div>
             <div class="w-full px-4 py-4 mb-4 md:w-1/2 md:mb-0">
               <div class="appearance-none label-floating">
+                <!------third input "comment"------------->
+                
+                
+                <p class="text-left text-white ">Comentario...</p>
                 <textarea
                   v-model="comment"
-                  class="block w-full px-4 py-4 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none autoexpand focus:outline-none focus:bg-white focus:border-gray-500"
+                  class="w-full px-4 py-20 mb-3 leading-relaxed tracking-wide text-white bg-black border border-gray-200 rounded appearance-none autoexpand focus:outline-none focus:bg-black focus:border-yellow-400"
                   id="message"
                   type="text"
                   placeholder="Comentario..."
                 ></textarea>
-                <label
-                  for="message"
-                  class="absolute top-0 left-0 block px-4 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
-                  >Comentario...
-                </label>
               </div>
             </div>
           </div>
-          <div class="w-4/12 mx-auto -mr-8">
-            <button class="px-4 py-2 font-bold send" @click="sendComment()">
+          <div class="w-4/12 mx-auto -mr-16">
+            <button class="px-4 py-2 font-bold border send" @click="sendComment()">
               <span>Enviar comentario</span>
             </button>
           </div>
@@ -322,10 +203,11 @@
       </div>
     </section>
 
-    <!-- section benefits-->
+    <!---------------------- section benefits-------------------------------->
     <section class="px-4 py-12 mb-48">
       <div class="flex">
         <div class="w-2/5">
+        <!------------img celphone------------------>
           <img
             class="absolute w-3/5 -mt-48"
             src="@/assets/images/Onboarding 3 Mockup.png"
@@ -334,22 +216,23 @@
 
         <div class="absolute right-0 w-11/12">
           <div class="w-3/5 mx-auto mr-32">
-            <div class="w-full">
-              <p class="text-xl font-bold">
+            <div class="w-full pt-12">
+              <p class="text-xl font-bold text-black testi_text">
                 Obten más beneficios
                 <br />
-                Descarga nuestra app
+                <span class="bg-yellow-400">Descarga nuestra app</span>
               </p>
             </div>
+            <!--------------------Facts------------------->
             <div class="flex w-full mb-4">
               <div class="w-1/2">
                 <img class="mx-auto" src="@/assets/images/Group 1.png" />
                 <p
-                  class="w-full px-6 text-xl font-bold text-gray-800 align-middle"
+                  class="w-full px-6 text-xl font-bold text-black align-middle"
                 >
                   ¿Quién es Foodies?
                 </p>
-                <p class="px-6 mb-5 text-base text-gray-800 align-middle">
+                <p class="px-6 mb-5 text-base text-black align-middle">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                 </p>
@@ -357,29 +240,30 @@
               <div class="w-1/2">
                 <img class="mx-auto" src="@/assets/images/Group 2.png" />
                 <p
-                  class="w-full px-6 text-xl font-bold text-gray-800 align-middle"
+                  class="w-full px-6 text-xl font-bold text-black align-middle"
                 >
                   ¿Quién es Foodies?
                 </p>
-                <p class="px-6 mb-5 text-base text-gray-800 align-middle">
+                <p class="px-6 mb-5 text-base text-black align-middle">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                 </p>
               </div>
             </div>
-            <div class="w-3/5 mx-auto">
+            <div class="w-3/5 pt-10 mx-auto ">
               <img class="mx-auto" src="@/assets/images/Group 3.png" />
-              <p class="px-6 text-xl font-bold text-gray-800">
+              <p class="px-6 text-xl font-bold text-black">
                 ¿Quién es Foodies?
               </p>
-              <p class="px-6 mb-5 text-base text-gray-800 align-middle">
+              <p class="px-6 mb-5 text-base text-black align-middle">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 at ipsum eu nunc commodo posuere et sit amet ligula.
               </p>
             </div>
           </div>
         </div>
-        <div class="flex w-2/5 mx-auto mt-16 ml-8">
+        <!---------------------svg arrows ---------------->
+        <div class="flex w-2/5 pt-12 mx-auto mt-12 ml-8">
           <svg
             class="mr-12"
             width="253"
@@ -437,24 +321,41 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
-$color1: rgb(random(200) + 50, random(200) + 50, random(200) + 50);
-$color2: rgb(random(40), random(40), random(40));
-body {
-  background: $color2;
-  margin: 0;
+
+
+.title_comment{
+  font-family: "Drunk Text Wide Medium";
+font-style: normal;
+font-weight: bold;
+line-height: 36px;
+
+text-align: center;
+}
+.testi_text{
+  font-family: "Drunk Text Wide Medium";
+  font-style: normal;
+  font-weight: bold;
+  line-height: 125.8%;
+}
+
+.testi_Desc{
+  font-style: normal;
+  font-weight: normal;
+  line-height: 128.91%;
 }
 
 .send {
-  padding: 5px 50px;
-  border: 1px solid $color1;
+  padding: 10px 15px;
+  border: 1px solid #FFD600;
   cursor: pointer;
-  background: none;
+  background: #FFD600;
   overflow: hidden;
   position: relative;
   margin-bottom: 5px;
+  border-radius: 0.5rem;
 }
 .send:hover span {
-  color: $color2;
+  color:black;
 }
 .send:focus {
   outline: none;
@@ -468,7 +369,7 @@ body {
   height: 100%;
   left: -215%;
   top: 0;
-  background: $color1;
+  background: #FFEA79;
   transform: skew(45deg);
   -webkit-transform: skew(45deg);
   transition: 0.45s;
@@ -478,12 +379,11 @@ body {
   left: -15%;
 }
 .send span {
-  position: relative;
-  z-index: 3;
-  font-size: 17pt;
-  color: $color1;
+  
+  font-size: 1rem;
+  color:black;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   transition: 0.3s;
   -webkit-transition: 0.3s;
 }
@@ -521,148 +421,5 @@ body {
   transition: all 0.2s ease-in-out;
   color: #1f9d55;
   opacity: 1;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  color: #444;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.slider {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.slider__nav {
-  width: 12px;
-  height: 12px;
-
-  margin: 26rem 12px 10rem 12px;
-  border-radius: 50%;
-  z-index: 10;
-  outline: 6px solid #ccc;
-  outline-offset: -6px;
-  box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.slider__nav:checked {
-  -webkit-animation: check 0.4s linear forwards;
-  animation: check 0.4s linear forwards;
-}
-.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
-  left: 0%;
-}
-.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
-  left: -100%;
-}
-.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
-  left: -200%;
-}
-.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
-  left: -300%;
-}
-.slider__inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400%;
-  height: 100%;
-  -webkit-transition: left 0.4s;
-  transition: left 0.4s;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-}
-.slider__contents {
-  height: 100%;
-  padding: 2rem;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-flow: column nowrap;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-.slider__image {
-  font-size: 2.7rem;
-  color: #2196f3;
-}
-.slider__caption {
-  font-weight: 500;
-  margin: 2rem 0 1rem;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-}
-.slider__txt {
-  color: #999;
-  margin-bottom: 3rem;
-  max-width: 75%;
-}
-
-@-webkit-keyframes check {
-  50% {
-    outline-color: #333;
-    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
-  }
-  100% {
-    outline-color: #333;
-    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  }
-}
-
-@keyframes check {
-  50% {
-    outline-color: #333;
-    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
-  }
-  100% {
-    outline-color: #333;
-    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
-  }
 }
 </style>
