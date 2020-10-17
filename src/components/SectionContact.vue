@@ -38,6 +38,7 @@
         <img src="@/assets/images/testimonials_bg_ketchup.png" />
       </div>
       <!--Start testimonials-->
+
       <div class="mx-auto slider">
         <input
           type="radio"
@@ -49,7 +50,7 @@
         <input type="radio" name="slider" title="slide2" class="slider__nav" />
         <input type="radio" name="slider" title="slide3" class="slider__nav" />
         <input type="radio" name="slider" title="slide4" class="slider__nav" />
-        <div class="h-full slider__inner ">
+        <div class="h-full slider__inner">
           <div class="slider__contents">
             <i class="slider__image fa fa-codepen"></i>
             <h2 class="slider__caption">codepen</h2>
@@ -84,54 +85,240 @@
           </div>
         </div>
       </div>
+
+      <div
+        class="container flex flex-col mx-auto my-10 overflow-hidden shadow-sm md:my-24 md:flex-row"
+        x-data="{ testimonialActive: 2 }"
+        x-cloak
+      >
+        <div
+          class="relative flex flex-col justify-center w-full py-2 bg-indigo-700 md:py-24 md:w-1/2 item-center"
+        >
+          <div
+            class="absolute top-0 left-0 z-10 w-16 h-16 grid-indigo md:w-40 md:h-40 md:ml-20 md:mt-24"
+          ></div>
+
+          <div
+            class="relative z-20 px-6 py-2 mb-0 text-2xl font-semibold leading-tight tracking-tight text-indigo-100 md:text-5xl md:py-6 md:px-1 md:w-64 md:mx-auto"
+          >
+            <span class="md:block">What Our</span>
+            <span class="md-block">Customers</span>
+            <span class="block">Are Saying!</span>
+          </div>
+
+          <div class="absolute bottom-0 right-0 hidden mb-4 mr-4 md:block">
+            <button
+              class="w-12 h-10 font-bold text-gray-500 bg-gray-100 border-r rounded-l-full focus:outline-none hover:text-indigo-500"
+              x-on:click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1"
+            >
+              &#8592;
+            </button>
+            <button
+              class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-r-full focus:outline-none hover:text-indigo-500"
+              x-on:click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+        <div class="bg-gray-100 md:w-1/2">
+          <div class="relative flex flex-col h-full">
+            <div class="absolute top-0 left-0 mt-3 ml-4 md:mt-5 md:ml-12">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-indigo-200 fill-current md:w-16 md:h-16"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z"
+                />
+              </svg>
+            </div>
+            <div class="relative z-10 h-full">
+              <div x-show.immediate="testimonialActive === 1">
+                <p
+                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  x-show.transition="testimonialActive == 1"
+                >
+                  Leverage agile frameworks to provide a robust synopsis for
+                  high level overviews. Iterative approaches to corporate
+                  strategy foster collaborative thinking to further the overall
+                  value proposition. Organically grow the holistic world view of
+                  disruptive innovation via workplace diversity and empowerment.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 2">
+                <p
+                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  x-show.transition="testimonialActive == 2"
+                >
+                  Bring to the table win-win survival strategies to ensure
+                  proactive domination. At the end of the day, going forward, a
+                  new normal that has evolved from generation X is on the runway
+                  heading towards a streamlined cloud solution. User generated
+                  content in real-time will have multiple touchpoints for
+                  offshoring.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 3">
+                <p
+                  class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl"
+                  x-show.transition="testimonialActive == 3"
+                >
+                  Capitalize on low hanging fruit to identify a ballpark value
+                  added activity to beta test. Override the digital divide with
+                  additional clickthroughs from DevOps. Nanotechnology immersion
+                  along the information highway will close the loop on focusing
+                  solely on the bottom line.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center my-4">
+              <button
+                @click.prevent="testimonialActive = 1"
+                class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:shadow-outline"
+                :class="{
+                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
+                    testimonialActive != 1,
+                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
+                    testimonialActive == 1,
+                }"
+              >
+                JD
+              </button>
+              <button
+                @click.prevent="testimonialActive = 2"
+                class="inline-block w-16 h-16 mx-2 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline"
+                :class="{
+                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
+                    testimonialActive != 2,
+                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
+                    testimonialActive == 2,
+                }"
+              >
+                WD
+              </button>
+              <button
+                @click.prevent="testimonialActive = 3"
+                class="inline-block w-12 h-12 mx-2 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline"
+                :class="{
+                  'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600':
+                    testimonialActive != 3,
+                  'h-16 w-16 opacity-100 bg-indigo-600 text-white':
+                    testimonialActive == 3,
+                }"
+              >
+                JW
+              </button>
+            </div>
+            <div class="flex justify-center px-6 pt-2 pb-6 md:py-6">
+              <div class="text-center" x-show="testimonialActive == 1">
+                <h2
+                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                >
+                  John Doe
+                </h2>
+                <small class="text-xs text-gray-500 truncate md:text-sm"
+                  >CEO, ABC Inc.</small
+                >
+              </div>
+
+              <div class="text-center" x-show="testimonialActive == 2">
+                <h2
+                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                >
+                  Winter Doe
+                </h2>
+                <small class="text-xs text-gray-500 truncate md:text-sm"
+                  >CTO, XYZ Corp.</small
+                >
+              </div>
+
+              <div class="text-center" x-show="testimonialActive == 3">
+                <h2
+                  class="text-sm font-bold leading-tight text-gray-700 md:text-base"
+                >
+                  John Wick
+                </h2>
+                <small class="text-xs text-gray-500 truncate md:text-sm"
+                  >Product Manager, Fake Corp.</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------->
     </section>
     <!--Section contact us-->
-    <section class="px-4 py-32">
-      <h2 class="mb-8 text-3xl text-center font-heading">
-        Contact the Scranton team
+    <section class="px-4 py-32 bg-black">
+      <h2 class="mb-8 text-3xl text-center text-white font-heading">
+        Cuentanos tu experiencia
       </h2>
+      <p class="text-center text-white">Don't miss out on our great offers & Recieve deals from all our top restaurants via e-mail.
       <div class="w-full max-w-2xl mx-auto mb-8">
         <form>
           <div class="flex flex-wrap -mx-8">
             <div class="w-full px-8 pt-2 mb-4 md:w-1/2 md:mb-0">
-              <label
-                class="block my-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                >Text input</label
-              >
-              <input
-                class="block w-full px-4 py-3 mb-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none md:mb-0 focus:bg-white focus:border-gray-500 focus:outline-none"
-                type="text"
-                placeholder="Enter text"
-              />
-              <label
-                class="block my-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                >Text input</label
-              >
-              <input
-                class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none md:mb-0 focus:bg-white focus:border-gray-500 focus:outline-none"
-                type="text"
-                placeholder="Enter text"
-              />
+              <div class="relative w-full appearance-none label-floating">
+                <input
+                  class="block w-full px-4 py-2 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="name"
+                  v-model="name"
+                  type="text"
+                  placeholder="Tu nombre"
+                  required
+                />
+                <label
+                  for="name"
+                  class="absolute top-0 left-0 block px-4 py-2 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
+                >
+                  Nombre y Apellido
+                </label>
+              </div>
+              <div class="w-full appearance-none label-floating">
+                <input
+                  class="block w-full px-4 py-2 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="email"
+                  type="text"
+                  v-model="email"
+                  placeholder="Tu correo"
+                  required
+                />
+                <label
+                  for="email"
+                  class="absolute top-0 left-0 block py-2 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
+                >
+                  Correo
+                </label>
+              </div>
             </div>
-            <div class="w-full px-8 py-4 mb-4 md:w-1/2 md:mb-0">
-              <label
-                class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                >Text input</label
-              >
-              <input
-                class="block w-full h-32 px-4 py-3 mb-2 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none md:mb-0 focus:bg-white focus:border-gray-500 focus:outline-none"
-                type="text"
-                placeholder="Enter text"
-              />
+            <div class="w-full px-4 py-4 mb-4 md:w-1/2 md:mb-0">
+              <div class="appearance-none label-floating">
+                <textarea
+                  v-model="comment"
+                  class="block w-full px-4 py-4 mb-3 leading-relaxed tracking-wide bg-gray-200 border border-gray-200 rounded appearance-none autoexpand focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="message"
+                  type="text"
+                  placeholder="Comentario..."
+                ></textarea>
+                <label
+                  for="message"
+                  class="absolute top-0 left-0 block px-4 mb-4 leading-tight tracking-wide opacity-0 cursor-text"
+                  >Comentario...
+                </label>
+              </div>
             </div>
           </div>
+          <div class="w-4/12 mx-auto -mr-8">
+            <button class="px-4 py-2 font-bold send" @click="sendComment()">
+              <span>Enviar comentario</span>
+            </button>
+          </div>
         </form>
-      </div>
-      <div class="text-center">
-        <p class="mb-2">Or just email us on</p>
-        <a class="text-blue-700 hover:underline" href="#"
-          >scranton@dundermifflin.com</a
-        >
       </div>
     </section>
 
@@ -226,17 +413,114 @@
 </template>
 
 <script>
+import { POST_CONTACT } from "@/request/api.js";
 export default {
   name: "SectionContact",
+  data: () => ({
+    comment: "",
+    name: "",
+    email: "",
+    testimonialActive: 0,
+  }),
+  methods: {
+    async sendComment() {
+      var result = await POST_CONTACT(this.name, this.email, this.comment);
+      console.log(result.status);
+      this.name = "";
+      this.email = "";
+      this.comment = "";
+    },
+  },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+$color1: rgb(random(200) + 50, random(200) + 50, random(200) + 50);
+$color2: rgb(random(40), random(40), random(40));
+body {
+  background: $color2;
+  margin: 0;
+}
+
+.send {
+  padding: 5px 50px;
+  border: 1px solid $color1;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5px;
+}
+.send:hover span {
+  color: $color2;
+}
+.send:focus {
+  outline: none;
+}
+
+/* Button 1 */
+.send:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: -215%;
+  top: 0;
+  background: $color1;
+  transform: skew(45deg);
+  -webkit-transform: skew(45deg);
+  transition: 0.45s;
+  -webkit-transition: 0.45s;
+}
+.send:hover:after {
+  left: -15%;
+}
+.send span {
+  position: relative;
+  z-index: 3;
+  font-size: 17pt;
+  color: $color1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+.serif {
+  font-family: "Zilla Slab", serif;
+}
+
+[x-cloak] {
+  display: none;
+}
+
+.grid-indigo {
+  background-image: radial-gradient(#5a67d8 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+.check input:invalid {
+  border-color: red;
+}
+
+/* FLOATING LABEL */
+.label-floating input:not(:placeholder-shown),
+.label-floating textarea:not(:placeholder-shown) {
+  padding-top: 1.4rem;
+}
+.label-floating input:not(:placeholder-shown) ~ label,
+.label-floating textarea:not(:placeholder-shown) ~ label {
+  font-size: 0.8rem;
+  transition: all 0.2s ease-in-out;
+  color: #1f9d55;
+  opacity: 1;
 }
 
 html,

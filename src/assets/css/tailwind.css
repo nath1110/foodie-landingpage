@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: DrukText;
+        src: url(/assets/fonts/DrukText/DrukTextWide-Heavy.ttf) format("ttf");
+    }
+
+    @font-face {
+        font-family: DrukTextMedium;
+        font-weight: 400;
+        src: url(/assets/fonts/DrukText/DrukTextWide-Medium.ttf) format("ttf");
+    }
+
+    @font-face {
+        font-family: SyneTypeface;
+        font-weight: 400;
+        src: url(/assets/fonts/syne-typeface/Webfonts/Syne-Regular.woff) format("woff");
+    }
+}

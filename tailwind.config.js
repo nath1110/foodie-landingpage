@@ -10,7 +10,11 @@ module.exports = {
     './src/**/*.vue'
   ],
   theme: {
-    extend: {}
+    fontFamily: {
+      
+      'drunk': ['DrunkText','DrunkTextMedium'],
+    }
+    
   },
   variants: {},
   plugins: []

@@ -1,14 +1,14 @@
 
 
 import axios from "axios";
-const API = "https://api.elaniin.dev/";
+const API = "https://api.elaniin.dev";
 
 export const GET_LOCATIONS = async (type) => {
     try {
         const result = await axios.get(API+'/api/locations',{
-            params:{
-                type:type
-            }
+                params:{
+                    type:type
+                }
         }
         );
         return result
@@ -66,7 +66,7 @@ export const GET_FILTERED_MENU= async (id,filter)=>{
 
 export const POST_CONTACT= async (name, email, message)=>{
     try{
-        const result =await axios.get(API+'/api/contact',{
+        const result =await axios.post(API+'/api/contact',{
             "name": name,
             "email": email,
             "message": message
