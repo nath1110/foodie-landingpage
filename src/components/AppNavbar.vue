@@ -1,16 +1,16 @@
 <template>
-  <nav id="header"  class="fixed top-0 z-30 w-full text-white">
-    
+  <nav id="header" class="fixed top-0 z-30 w-full" >
     <div
+    :class="colorText"
       class="container flex flex-wrap items-center justify-between w-full pt-8 pb-5 ml-4"
     >
       <div class="flex items-center pl-4 ml-8">
-        <a
-          class="text-black no-underline toggleColour title hover:no-underline"
-          href="#"
+        <router-link
+          to="/"
+          class="no-underline toggleColour title hover:no-underline a"
         >
           Foodies
-        </a>
+        </router-link>
       </div>
       <!-----------button navbar------------>
       <div class="block pr-4 xl:hidden">
@@ -30,27 +30,32 @@
       </div>
       <!------------------ list sections--------->
       <div
-        class="flex-grow w-full h-16 text-black bg-white md:hidden xl:flex xl:items-center xl:w-auto xl:mt-0 xl:bg-transparent xl:p-0"
+        class="flex-grow w-full h-16 bg-white md:hidden xl:flex xl:items-center xl:w-auto xl:mt-0 xl:bg-transparent xl:p-0"
         id="nav-content"
       >
         <ul class="items-center flex-1 h-full ml-16 list-reset lg:flex">
           <li class="mr-3">
-            <a class="px-4 py-2 text-black no-underline link5" href="#"
-              >Acerca de</a
-            >
+            <router-link to="/" class="px-4 py-2 no-underline link5 a">
+              Acerca de
+            </router-link>
           </li>
           <li class="mr-6">
-            <a class="px-4 py-2 text-black no-underline link5" href="#"
-              ><span>Restaurantes</span></a
-            >
+            <router-link to="/" class="px-4 py-2 no-underline link5 a">
+              Restaurante
+            </router-link>
           </li>
           <li class="mr-6">
-            <a class="px-4 py-2 text-black no-underline link5" href="#">Menú</a>
+            <router-link
+              to="/menu"
+              class="px-4 py-2 no-underline link5 a"
+            >
+              Menú
+            </router-link>
           </li>
           <li class="mr-3">
-            <a class="py-2 text-black no-underline link5" href="#"
-              >Contáctanos</a
-            >
+            <router-link to="/" class="py-2 no-underline link5 a">
+              Contáctanos
+            </router-link>
           </li>
         </ul>
       </div>
@@ -62,23 +67,15 @@
 <script>
 export default {
   name: "AppNavbar",
-  data:()=>({
-  }),
-  
-  methods: {
+  data: () => ({}),
+  props:{
+    colorText:{
+      type:String,
+      default: "text-black"
+    }
   },
-};
-/*
-var scrollpos = window.scrollY;
-var header = document.getElementById("header");
-
-var navcontent = document.getElementById("nav-content");
-var navaction = document.getElementById("navAction");
-var toToggle = document.querySelectorAll(".toggleColour");
-
-document.addEventListener("scroll", function () {
-
-  /*Apply classes for slide in bar*//*
+  methods: {},
+}; /*
   scrollpos = window.scrollY;
   if (scrollpos > 10) {
     header.classList.add("bg-white");
@@ -144,16 +141,27 @@ function checkParent(t, elm) {
   }
   return false;
 }*/
+/*
+var scrollpos = window.scrollY;
+var header = document.getElementById("header");
+
+var navcontent = document.getElementById("nav-content");
+var navaction = document.getElementById("navAction");
+var toToggle = document.querySelectorAll(".toggleColour");
+
+document.addEventListener("scroll", function () {
+
+  /*Apply classes for slide in bar*/
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-.title{
+.title {
   font-family: "Drunk Text Wide Medium";
   font-weight: bold;
   font-size: 1.6882rem;
 }
-a {
+.a{
   display: block;
   position: relative;
   overflow: hidden;
@@ -164,7 +172,7 @@ a {
   line-height: 1.8;
 }
 
-a:hover {
+.a:hover {
   color: #3d4447;
 }
 
@@ -173,10 +181,10 @@ a:hover {
   z-index: 1;
   padding: 2.5rem 1rem 1.3rem;
   font-family: "Syne";
-font-style: normal;
-font-weight: bold;
-font-size: 1rem;
-line-height: 22px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 22px;
 }
 
 .link5:after {
