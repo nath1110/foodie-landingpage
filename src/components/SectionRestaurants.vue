@@ -1,6 +1,6 @@
 <template>
-  <div class="flex w-full px-12 pb-10 md:px-0">
-      <div class="w-2/5 md:w-1/2 ">
+  <div class="flex flex-wrap w-full pb-10 md:px-0" id="restaurants">
+      <div class="w-full md:w-1/2 ">
         <h1 class="text-black prim_title xl:pb-6">Estamos para ti</h1>
         <!------ Tabs------------>
         <div class="flex w-full">
@@ -69,7 +69,7 @@
         <!--------start card info restaurant------------->
         <div
           class="flex flex-col w-4/5 min-w-0 mx-auto mt-3 bg-white border rounded-md mbreak-words"
-          v-for="branch in locations" :key="branch"
+          v-for="branch in locations" :key="branch.id"
         >
           <div class="flex-auto px-4 py-5 text-xl text-left text-black tab-content">
               
@@ -86,7 +86,7 @@
       
       <!---- start section google map------------>
 
-      <div class="w-3/5 h-full md:w-1/2">
+      <div class="w-full h-full md:w-1/2">
         <div class="overflow-hidden border rounded ">
           <div class="container Map">
             <div class="row Map">

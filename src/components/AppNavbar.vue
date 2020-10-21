@@ -1,10 +1,10 @@
 <template>
-  <nav id="header" class="fixed top-0 z-30 w-full" >
+  <nav id="header" class="fixed top-0 z-30 w-full">
     <div
-    :class="colorText"
-      class="container flex flex-wrap items-center justify-between w-full pt-8 pb-5 ml-4"
+      :class="colorText"
+      class="flex flex-wrap items-center justify-between w-full pt-8 pb-5 md:container md:ml-4"
     >
-      <div class="flex items-center pl-4 ml-8">
+      <div class="flex items-center pl-4 md:ml-8">
         <router-link
           to="/"
           class="no-underline toggleColour title hover:no-underline a"
@@ -13,9 +13,10 @@
         </router-link>
       </div>
       <!-----------button navbar------------>
-      <div class="block pr-4 xl:hidden">
+      <div class="block pr-4 md:hidden">
         <button
           id="nav-toggle"
+          @click="check()"
           class="flex items-center p-1 text-orange-800 hover:text-gray-900"
         >
           <svg
@@ -30,30 +31,28 @@
       </div>
       <!------------------ list sections--------->
       <div
-        class="flex-grow w-full h-16 bg-white md:hidden xl:flex xl:items-center xl:w-auto xl:mt-0 xl:bg-transparent xl:p-0"
+      :class="changes"
+        class="flex-grow w-full md:flex xl:items-center xl:w-auto xl:mt-0 xl:bg-transparent xl:p-0"
         id="nav-content"
       >
-        <ul class="items-center flex-1 h-full ml-16 list-reset lg:flex">
+        <ul class="items-center flex-1 h-full md:ml-16 md:flex">
           <li class="mr-3">
-            <router-link to="/" class="px-4 py-2 no-underline link5 a">
+            <router-link to="/#about" class="px-4 py-2 no-underline link5 a">
               Acerca de
             </router-link>
           </li>
           <li class="mr-6">
-            <router-link to="/" class="px-4 py-2 no-underline link5 a">
+            <router-link to="/#restaurants" class="px-4 py-2 link5 a">
               Restaurante
             </router-link>
           </li>
           <li class="mr-6">
-            <router-link
-              to="/menu"
-              class="px-4 py-2 no-underline link5 a"
-            >
+            <router-link to="/menu" class="px-4 py-2 link5 a">
               Menú
             </router-link>
           </li>
           <li class="mr-3">
-            <router-link to="/" class="py-2 no-underline link5 a">
+            <router-link to="/#contactUs" class="py-2 no-underline link5 a">
               Contáctanos
             </router-link>
           </li>
@@ -63,18 +62,34 @@
     <hr class="py-0 my-0 border-b border-gray-100 opacity-25" />
   </nav>
 </template>
-
 <script>
 export default {
   name: "AppNavbar",
-  data: () => ({}),
-  props:{
-    colorText:{
-      type:String,
-      default: "text-black"
+  data: () => ({
+    changes:"hidden",
+    flag:true
+  }),
+  props: {
+    colorText: {
+      type: String,
+      default: "text-black",
+    },
+  },
+  methods: {
+    check(){
+      if(this.flag && this.colorText=="text-white"){
+        this.changes="bg-black md:hidden";
+        this.flag=false;
+      }else if(this.flag && this.colorText=="text-black"){
+        this.changes="bg-white md:hidden";
+        this.flag=false;
+      }
+      else{
+        this.flag=true;
+        this.changes="hidden";
+      }
     }
   },
-  methods: {},
 }; /*
   scrollpos = window.scrollY;
   if (scrollpos > 10) {
@@ -107,40 +122,8 @@ export default {
     navcontent.classList.remove("bg-white");
     navcontent.classList.add("bg-gray-100");
   }
-});
+});*/
 
-var navMenuDiv = document.getElementById("nav-content");
-var navMenu = document.getElementById("nav-toggle");
-
-document.onclick = check;
-function check(e) {
-  var target = (e && e.target) || (event && event.srcElement);
-
-  //Nav Menu
-  if (!checkParent(target, navMenuDiv)) {
-    // click NOT on the menu
-    if (checkParent(target, navMenu)) {
-      // click on the link
-      if (navMenuDiv.classList.contains("hidden")) {
-        navMenuDiv.classList.remove("hidden");
-      } else {
-        navMenuDiv.classList.add("hidden");
-      }
-    } else {
-      // click both outside link and outside menu, hide menu
-      navMenuDiv.classList.add("hidden");
-    }
-  }
-}
-function checkParent(t, elm) {
-  while (t.parentNode) {
-    if (t == elm) {
-      return true;
-    }
-    t = t.parentNode;
-  }
-  return false;
-}*/
 /*
 var scrollpos = window.scrollY;
 var header = document.getElementById("header");
@@ -161,7 +144,7 @@ document.addEventListener("scroll", function () {
   font-weight: bold;
   font-size: 1.6882rem;
 }
-.a{
+.a {
   display: block;
   position: relative;
   overflow: hidden;

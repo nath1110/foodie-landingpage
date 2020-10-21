@@ -3,7 +3,7 @@
     <!-----figure background--->
     <div class="absolute items-end w-full lg:-mt-24">
       <svg
-        class="absolute top-0 right-0 -mr-0"
+        class="absolute top-0 -mr-0 sm:right-0"
         width="792"
         height="794"
         viewBox="0 0 792 794"
@@ -21,11 +21,11 @@
     <!-----end figure background--->
     <div class="pt-20 mt-16 overflow-x-hidden">
       <div
-        class="container relative flex flex-col flex-wrap items-center mt-8 ml-16 overflow-x-hidden md:flex-row"
+        class="relative items-center mx-6 mt-8 overflow-x-hidden sm:mr-0 sm:ml-16 sm:container sm:flex sm:flex-col sm:flex-wrap md:flex-row"
       >
         <!----left cl--->
         <div
-          class="flex flex-col items-start justify-center text-center lg:w-6/12 md:w-2/5 md:text-left"
+          class="justify-center text-center sm:items-start sm:flex sm:flex-col lg:w-6/12 md:w-2/5 md:text-left"
         >
           <h1
             class="my-4 leading-tight text-black md:pr-0 xl:pr-6 header-text md:text-4xl"
@@ -43,7 +43,7 @@
 
           <a
             class="flex my-12 text-black but-find lg:mx-0 hover:underline"
-            href="#"
+            href="#restaurants"
           >
             Encuentranos
             <svg
@@ -74,7 +74,7 @@
       </div>
     </div>
     <!---------next section --------------->
-    <section class="py-8 overflow-x-hidden">
+    <section class="py-8 overflow-x-hidden" id="about">
       <div
         class="container flex flex-wrap pt-4 pb-12 mt-32 ml-0 mr-0 overflow-x-hidden"
       >
@@ -98,7 +98,7 @@
           </svg>
         </div>
         <div
-          class="text-right align-bottom xl:relative lg:inset-y-0 lg:right-0 lg:w-1/2"
+          class="w-full text-right align-bottom xl:relative lg:inset-y-0 lg:right-0 lg:w-1/2"
         >
           <p
             class="absolute font-bold leading-10 tracking-tight text-right text-gray-900 xl:mt-64 xl:ml-24 xl:text-5xl text_img sm:text-3xl sm:leading-none md:text-4xl"
@@ -124,7 +124,8 @@
                 dolore culpa irure eiusmod minim occaecat et id minim ullamco.
             </p>
             <div class="sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-              <button
+              <a
+               href="#contactUs"
                 class="inline-flex px-8 py-4 font-bold text-gray-800 but-find lg:mx-0 hover:underline"
               >
                 Contáctanos
@@ -142,7 +143,7 @@
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   ></path>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>

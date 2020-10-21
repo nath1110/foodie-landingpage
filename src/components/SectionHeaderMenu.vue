@@ -7,9 +7,9 @@
         </svg>
     </div>
     <!-----end figure background--->
-    <div class="pt-20 mt-16 overflow-x-hidden">
+    <div class="pt-20 pb-32 mt-16 md:pb-20 sm:overflow-x-hidden">
       <div
-        class="container relative flex flex-col flex-wrap items-center mt-8 ml-16 overflow-x-hidden md:flex-row"
+        class="relative flex flex-col flex-wrap items-center mt-8 overflow-x-hidden sm:ml-16 sm:container md:flex-row"
       >
         <!----left cl--->
         <div
@@ -24,35 +24,12 @@
             <span class="text-black span-city">experiencia</span>
           </h1>
 
-          <p class="text-xl leading-normal parraf1">
-            Estamos a punto de descubrir un mundo lleno de sabores<br />
-            y de emociones inigualables.
-          </p>
 
-          <a
-            class="flex my-12 text-black but-find lg:mx-0 hover:underline"
-            href="#"
-          >
-            Encuentranos
-            <svg
-              class="w-6 h-6 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              ></path>
-            </svg>
-          </a>
+          
         </div>
         <!--Right Col-->
         <div
-          class="flex flex-col justify-end -mr-12 overflow-x-hidden lg:-mt-10 lg:w-6/12 ext-center md:w-3/5"
+          class="flex flex-col justify-end -mr-12 overflow-x-hidden lg:w-6/12 ext-center md:w-3/5"
         >
           <img
             class="overflow-x-hidden md:w-4/5"

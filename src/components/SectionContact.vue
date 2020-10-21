@@ -1,8 +1,8 @@
 <template>
   <div class="">
-    <section class="px-4 py-12 xl:mb-10">
+    <section class="px-4 py-12 pb-40 md:pb-12 md:mt-0 lg:mb-6">
       <!----------------------- figure left------------->
-      <div class="absolute left-0 justify-start">
+      <div class="absolute left-0 justify-start hidden sm:inline">
         <svg
           width="187"
           height="547"
@@ -19,7 +19,7 @@
         </svg>
       </div>
       <!--------------------------Figure right-------------------->
-      <div class="absolute right-0 justify-end xl:mt-32">
+      <div class="absolute right-0 justify-end hidden xl:mt-32 sm:inline">
         <svg
           width="214"
           height="547"
@@ -36,13 +36,13 @@
         </svg>
       </div>
       <!---------------------- image ketchup---------------------->
-      <div class="absolute right-0">
+      <div class="absolute right-0 hidden md:inline">
         <img src="@/assets/images/testimonials_bg_ketchup.png" />
       </div>
 
       <!--------------------------Start testimonials--------------------->
       <div
-        class="container flex flex-col mx-auto my-10 overflow-hidden shadow-sm xl:pt-20 md:my-24 md:flex-row"
+        class="flex flex-col w-3/5 mx-auto mt-40 overflow-hidden md:w-auto xl:pt-20 md:my-24 md:flex-row"
         x-data="{ testimonialActive: 2 }"
         x-cloak
       >
@@ -116,16 +116,18 @@
                 </h2>
               </div>
             </div>
-            <div class="bottom-0 right-0 hidden mb-4 mr-4 md:block">
+            <div class="bottom-0 right-0 block mb-4 mr-4">
             <button
               class="w-16 h-12 font-bold text-black focus:outline-none hover:text-indigo-500"
-              @click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1"
+              x-on:click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1"
+              @click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
             >
               &#8592;
             </button>
             <span>{{testimonialActive}} / 3</span>
             <button
               class="w-16 h-12 font-bold text-black focus:outline-none hover:text-indigo-500"
+              x-on:click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
               @click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1"
             >
               &#8594;
@@ -139,7 +141,7 @@
     <!--------------end testimonials------------------->
 
     <!---------------------Section contact us------------------------------->
-    <section class="px-4 bg-black xl:pt-32 xl:pb-24">
+    <section class="px-4 py-32 bg-black sm:py-20 xl:pt-32 xl:pb-24" id="contactUs">
 
       <h2 class="mb-8 text-4xl text-center text-white font-heading title_comment">
         Cuentanos tu experiencia
@@ -178,7 +180,7 @@
                 />
               </div>
             </div>
-            <div class="w-full px-4 py-4 mb-4 md:w-1/2 md:mb-0">
+            <div class="w-full px-8 py-4 mb-4 md:px-4 md:w-1/2 md:mb-0">
               <div class="appearance-none label-floating">
                 <!------third input "comment"------------->
                 
@@ -194,7 +196,7 @@
               </div>
             </div>
           </div>
-          <div class="w-4/12 mx-auto -mr-16">
+          <div class="w-4/12 mx-auto md:-mr-16">
             <button class="px-4 py-2 font-bold border send" @click="sendComment()">
               <span>Enviar comentario</span>
             </button>
@@ -204,19 +206,19 @@
     </section>
 
     <!---------------------- section benefits-------------------------------->
-    <section class="px-4 py-12 mb-48">
-      <div class="flex">
-        <div class="w-2/5">
+    <section class="px-4 mb-48 sm:py-12">
+      <div class="flex flex-wrap">
+        <div class="w-full mt-8 md:mt-0 md:w-2/5">
         <!------------img celphone------------------>
           <img
-            class="absolute w-3/5 -mt-48"
+            class="absolute w-full -mt-48 md:w-3/5"
             src="@/assets/images/Onboarding 3 Mockup.png"
           />
         </div>
-
-        <div class="absolute right-0 w-11/12">
-          <div class="w-3/5 mx-auto mr-32">
-            <div class="w-full pt-12">
+        <!--- text-------------------------------->
+        <div class="right-0 mt-56 sm:pt-56 sm:absolute md:pt-0 md:mt-0 md:w-11/12">
+          <div class="w-full mx-auto mr-32 md:w-3/5">
+            <div class="w-full pt-12 pb-12 sm:pb-0">
               <p class="text-xl font-bold text-black testi_text">
                 Obten más beneficios
                 <br />
@@ -224,8 +226,8 @@
               </p>
             </div>
             <!--------------------Facts------------------->
-            <div class="flex w-full mb-4">
-              <div class="w-1/2">
+            <div class="w-full mb-4 sm:flex sm:flex-wrap">
+              <div class="sm:w-1/2">
                 <img class="mx-auto" src="@/assets/images/Group 1.png" />
                 <p
                   class="w-full px-6 text-xl font-bold text-black align-middle"
@@ -237,7 +239,7 @@
                   Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                 </p>
               </div>
-              <div class="w-1/2">
+              <div class="sm:w-1/2">
                 <img class="mx-auto" src="@/assets/images/Group 2.png" />
                 <p
                   class="w-full px-6 text-xl font-bold text-black align-middle"
@@ -250,7 +252,7 @@
                 </p>
               </div>
             </div>
-            <div class="w-3/5 pt-10 mx-auto ">
+            <div class="pt-10 mx-auto sm:w-3/5 ">
               <img class="mx-auto" src="@/assets/images/Group 3.png" />
               <p class="px-6 text-xl font-bold text-black">
                 ¿Quién es Foodies?
@@ -263,7 +265,7 @@
           </div>
         </div>
         <!---------------------svg arrows ---------------->
-        <div class="flex w-2/5 pt-12 mx-auto mt-12 ml-8">
+        <div class="hidden w-full pt-64 mx-auto mt-64 ml-20 md:ml-8 sm:flex md:pt-12 md:mt-12 md:w-2/5">
           <svg
             class="mr-12"
             width="253"
@@ -304,7 +306,7 @@ export default {
     comment: "",
     name: "",
     email: "",
-    testimonialActive: 0,
+    testimonialActive: 1,
   }),
   methods: {
     async sendComment() {
@@ -321,7 +323,9 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
-
+[x-cloak] {
+  display: none;
+}
 
 .title_comment{
   font-family: "Drunk Text Wide Medium";
@@ -393,18 +397,10 @@ text-align: center;
 *:after {
   box-sizing: border-box;
 }
-.serif {
-  font-family: "Zilla Slab", serif;
-}
 
-[x-cloak] {
-  display: none;
-}
 
-.grid-indigo {
-  background-image: radial-gradient(#5a67d8 2px, transparent 2px);
-  background-size: 16px 16px;
-}
+
+
 
 .check input:invalid {
   border-color: red;

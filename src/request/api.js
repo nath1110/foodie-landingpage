@@ -21,8 +21,10 @@ export const GET_LOCATIONS = async (type) => {
 export const GET_FILTERED_LOCATION = async (type,filter) => {
     try {
         const result = await axios.get(API+'/api/locations',{
+            params:{
                 type:type,
                 query:filter
+            }
         });
         return result
     } catch (error) {
@@ -40,10 +42,21 @@ export const GET_CATEGORIES= async ()=>{
     }
 }
 
-export const GET_MENU= async (id)=>{
+export const GET_MENU= async (page)=>{
+    try{
+        const result =await axios.get(API+'/api/menu'+page);
+        return result;
+    }catch(error){
+        console.log("ERROR ",error);
+        return error;
+    }
+}
+export const GET_MENU_CATEGORY= async (id)=>{
     try{
         const result =await axios.get(API+'/api/menu',{
+            params:{
                 category:id
+            }
         });
         return result;
     }catch(error){
