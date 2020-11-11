@@ -11,6 +11,7 @@
 
 <script>
 // @ is an alias to /src
+//commentary
 import AppNavbar from '@/components/AppNavbar.vue'
 import SectionAbout from '@/components/SectionAbout.vue'
 import SectionRestaurants from '@/components/SectionRestaurants.vue'
